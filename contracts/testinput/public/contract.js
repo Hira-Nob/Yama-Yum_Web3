@@ -37,7 +37,7 @@ const initialize = () => {
             "type": "function"
         }
     ];
-    const ContractAddress = "0x***"; //enter deployed contract address
+    const ContractAddress = "0x8A52E4F2F46BE8C08cA7A0025Ed1C4d4Ae496870"; //enter deployed contract address
 
     const isMetaMaskConnected = () => accounts && accounts.length > 0
 
