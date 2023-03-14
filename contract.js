@@ -8,6 +8,15 @@ const initialize = () => {
     const inputMessage = document.getElementById('inputMessage');
     const accountsDiv = document.getElementById('accounts');
     let myContract;
+    
+    
+          async function loadWeb3(){
+   if(window.ethereum) {
+    window.web3 = new Web3(window.ethereum);
+    window.ethereum.enable();
+   }
+  }
+    
     //enter deployed contract abi
     const ContractAbi = [
         {
@@ -40,6 +49,8 @@ const initialize = () => {
     const ContractAddress = "0x8A52E4F2F46BE8C08cA7A0025Ed1C4d4Ae496870"; //enter deployed contract address
 
     const isMetaMaskConnected = () => accounts && accounts.length > 0
+    
+
 
     const isMetaMaskInstalled = () => {
         const { ethereum } = window;
