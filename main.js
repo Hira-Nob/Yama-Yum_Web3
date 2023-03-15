@@ -1,7 +1,9 @@
 //import todoContract from '../build/contracts/todo.json' assert { type: "json" };
 
 //Ganacheのデフォルトのポート番号は7545
-const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
+//const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
+//関係無いと思うけど一応↓に変えとく
+const web3  = new Web3(window.ethereum);
 
 // check metamask
 // https://docs.metamask.io/guide/getting-started.html#basic-considerations
