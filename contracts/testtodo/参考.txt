@@ -1,4 +1,0 @@
-元サイト
-https://mixi-developers.mixi.co.jp/todo-dapps-5ae6b38f7da9
-github
-https://github.com/lirlia/solidity-todo/blob/main/frontend/index.html
