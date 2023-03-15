@@ -8,22 +8,7 @@ const initialize = () => {
     const inputMessage = document.getElementById('inputMessage');
     const accountsDiv = document.getElementById('accounts');
     let myContract;
-    
-    
-   async function loadWeb3(){
-   if(window.ethereum) {
-    window.web3 = new Web3(window.ethereum);
-    window.ethereum.enable();
-   }
-  }
-    
-      // 利用者のメタマスクのウォレットアドレスを取得
-  async function getCurrentAccount(){
-   const accounts = await window.web3.eth.getAccounts();
-   return accounts[0];
-  }
-
-    
+      
     //enter deployed contract abi
     const ContractAbi = [
         {
