@@ -20,6 +20,63 @@
 
 <script src="contract.js" defer></script>
 	
+
+
+<script type="text/javascript">	
+const initialize = () => {
+    let accounts;
+    const onboardButton = document.getElementById('connectButton');
+    const retrieveButton = document.getElementById('retrieveButton');
+    const storeButton = document.getElementById('storeButton');
+    const messageStatus = document.getElementById('messageStatus');
+    const inputMessage = document.getElementById('inputMessage');
+    const accountsDiv = document.getElementById('accounts');
+    let myContract;
+    
+        //enter deployed contract abi
+    const ContractAbi = [
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "msg_in",
+                    "type": "string"
+                }
+            ],
+            "name": "store",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "retrieve",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ];
+    const ContractAddress = "0x8A52E4F2F46BE8C08cA7A0025Ed1C4d4Ae496870"; //enter deployed contract address
+
+    const isMetaMaskConnected = () => accounts && accounts.length > 0
+    
+
+
+    const isMetaMaskInstalled = () => {
+        const { ethereum } = window;
+        return Boolean(ethereum && ethereum.isMetaMask);
+    };
+
+  }
+	
+	
+</script>
 <!--
  <p>Faucetのデモサイト</p>
  <button type=“button” onclick="doFunction();">トークンをゲットする</button>
