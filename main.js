@@ -106,8 +106,7 @@ function _updateDisplay(todoList) {
   for (const e of todoList) {
     const checkFlag = e.is_opened ? "" : "checked"
 
-    todoHTMLItems = \
-      todoHTMLItems + '<li id="'+ e.id +'" class="list-group-item border-0 d-flex align-items-center ps-0">\
+    todoHTMLItems = todoHTMLItems + '<li id="'+ e.id +'" class="list-group-item border-0 d-flex align-items-center ps-0">\
       <input class="deleteTodoButton btn btn-danger" type="button" value="投票!"/>\
       <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + '</li>'
   }
