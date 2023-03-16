@@ -136,7 +136,7 @@ function _updateDisplay(todoList) {
     todoHTMLItems = todoHTMLItems + '<li id="'+ e.id +'" class="list-group-item border-0 d-flex align-items-center ps-0">\
       <input class="adoptionButton btn btn-success m-2" type="button" value="採用!"/>\
       <input class="voteButton btn btn-secondary m-2" type="button" value="投票"/>\
-      <input class="form-check-input m-2" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + '</li>'
+      <input class="form-check-input m-2" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + " / 投票件数：" + e.voteCnt + '</li>'
   }
 
   // 画面の更新
@@ -163,19 +163,19 @@ async function updateABI(id, is_opened) {
   await contract.methods.updateTODO(id, is_opened).send({from: web3.eth.defaultAccount})
 }
 
-// contract で TODO を削除
+/* // contract で TODO を削除
 async function deleteABI(id) {
   await contract.methods.deleteTODO(id).send({from: web3.eth.defaultAccount})
-}
+} */
 
 // contract で Itemに投票
 async function voteABI(id) {
+  alert('投票が完了しました')
   await contract.methods.voteTODO(id).send({from: web3.eth.defaultAccount})
-  alert('voteABIをEVMにリクエスト')
 }
 
 // contract で Itemを採用
 async function adoptABI(id) {
+  alert('アイデアを採用しました')
   await contract.methods.adoptTODO(id).send({from: web3.eth.defaultAccount})
-  alert('adoptABIをEVMにリクエスト')
 }
