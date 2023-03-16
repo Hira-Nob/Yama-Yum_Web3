@@ -1,5 +1,5 @@
 // Set contract address
-const contractAddress = "0xACBeFFcd6152D00cce6AA005DFeF69c6a8565306"
+const contractAddress = "0xD54E113FBF38C165f799f6da35c06b795D09aD2D"
 // まだ修正してない
  const ContractAbi = [
 	{
@@ -35,6 +35,37 @@ const contractAddress = "0xACBeFFcd6152D00cce6AA005DFeF69c6a8565306"
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "_is_opened",
+				"type": "bool"
+			}
+		],
+		"name": "updateTODO",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_id",
+				"type": "uint256"
+			}
+		],
+		"name": "voteTODO",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "getTODO",
 		"outputs": [
@@ -42,25 +73,6 @@ const contractAddress = "0xACBeFFcd6152D00cce6AA005DFeF69c6a8565306"
 				"internalType": "uint256[]",
 				"name": "",
 				"type": "uint256[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "todoToOwner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -90,6 +102,11 @@ const contractAddress = "0xACBeFFcd6152D00cce6AA005DFeF69c6a8565306"
 				"internalType": "bool",
 				"name": "is_deleted",
 				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "voteCnt",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -99,18 +116,19 @@ const contractAddress = "0xACBeFFcd6152D00cce6AA005DFeF69c6a8565306"
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_id",
+				"name": "",
 				"type": "uint256"
-			},
-			{
-				"internalType": "bool",
-				"name": "_is_opened",
-				"type": "bool"
 			}
 		],
-		"name": "updateTODO",
-		"outputs": [],
-		"stateMutability": "nonpayable",
+		"name": "todoToOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]

@@ -34,6 +34,21 @@ $(document).on("click", ".deleteTodoButton", function () {
   deleteTodo(id);
 });
 
+// 投票ボタン押下時の処理
+$(document).on("click", ".voteButton", function () {
+  const id=$(this).parent().attr('id');
+  voteItem(id);
+});
+
+// 採用ボタン押下時の処理
+$(document).on("click", ".adoptionButton", function () {
+  const id=$(this).parent().attr('id');
+  adoptItem(id);
+  // 演出を追加
+  //
+  //
+});
+
 // チェックボックス押下時の処理
 // DOM 生成後に作られたオブジェクトなので on を使う
 $(document).on("change", "input[type=checkbox]", function(){
@@ -58,6 +73,18 @@ function updateTodo(id, is_opened) {
 // TODOの削除
 function deleteTodo(id) {
   deleteABI(id).
+  then(() => displayTodo());
+}
+
+// 投票時の処理
+function voteItem(id) {
+  voteABI(id).
+  then(() => displayTodo());
+}
+
+// 採用時の処理
+function adoptItem(id) {
+  adoptABI(id).
   then(() => displayTodo());
 }
 
@@ -108,7 +135,7 @@ function _updateDisplay(todoList) {
 
     todoHTMLItems = todoHTMLItems + '<li id="'+ e.id +'" class="list-group-item border-0 d-flex align-items-center ps-0">\
       <input class="adoptionButton btn btn-success m-2" type="button" value="採用!"/>\
-      <input class="deleteTodoButton btn btn-secondary m-2" type="button" value="投票"/>\
+      <input class="voteButton btn btn-secondary m-2" type="button" value="投票"/>\
       <input class="form-check-input m-2" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + '</li>'
   }
 
@@ -139,4 +166,16 @@ async function updateABI(id, is_opened) {
 // contract で TODO を削除
 async function deleteABI(id) {
   await contract.methods.deleteTODO(id).send({from: web3.eth.defaultAccount})
+}
+
+// contract で Itemに投票
+async function voteABI(id) {
+  await contract.methods.voteTODO(id).send({from: web3.eth.defaultAccount})
+  alert('voteABIをEVMにリクエスト')
+}
+
+// contract で Itemを採用
+async function adoptABI(id) {
+  await contract.methods.adoptTODO(id).send({from: web3.eth.defaultAccount})
+  alert('adoptABIをEVMにリクエスト')
 }
