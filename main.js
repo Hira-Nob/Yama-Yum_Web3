@@ -63,7 +63,7 @@ function deleteTodo(id) {
 
 // TODOの詳細の取得
 async function describeTodo(id) {
-  const todo = await describeABI()
+  const todo = await describeABI(id)
   todo['id'] = id
   return todo
 }
@@ -107,7 +107,8 @@ function _updateDisplay(todoList) {
     const checkFlag = e.is_opened ? "" : "checked"
 
     todoHTMLItems = todoHTMLItems + '<li id="'+ e.id +'" class="list-group-item border-0 d-flex align-items-center ps-0">\
-      <input class="deleteTodoButton btn btn-danger" type="button" value="投票!"/>\
+      <input class="deleteTodoButton btn btn-secondary" type="button" value="投票"/>\
+      <input class="adoptionButton btn btn-success" type="button" value="採用!"/>\
       <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + '</li>'
   }
 
@@ -121,8 +122,8 @@ async function getABI() {
 }
 
 // contract から特定の TODO を取得
-async function describeABI() {
-  return await contract.methods.todos().call({from: web3.eth.defaultAccount});
+async function describeABI(id) {
+  return await contract.methods.todos(id).call({from: web3.eth.defaultAccount});
 }
 
 // contract から TODO を作成
