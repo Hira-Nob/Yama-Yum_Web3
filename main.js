@@ -170,12 +170,12 @@ async function deleteABI(id) {
 
 // contract で Itemに投票
 async function voteABI(id) {
-  alert('投票が完了しました')
   await contract.methods.voteTODO(id).send({from: web3.eth.defaultAccount})
+  alert('投票が完了しました')
 }
 
 // contract で Itemを採用
 async function adoptABI(id) {
-  alert('アイデアを採用しました')
   await contract.methods.adoptTODO(id).send({from: web3.eth.defaultAccount})
+  alert('アイデアを採用しました')
 }
