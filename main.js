@@ -34,7 +34,7 @@ $(document).on("click", ".deleteTodoButton", function () {
   deleteTodo(id);
 });
 
-// チェックボックス押下時の処理
+// チェックボックス押下時の処理
 // DOM 生成後に作られたオブジェクトなので on を使う
 $(document).on("change", "input[type=checkbox]", function(){
   const id=$(this).parent().attr('id');
@@ -63,7 +63,7 @@ function deleteTodo(id) {
 
 // TODOの詳細の取得
 async function describeTodo(id) {
-  const todo = await describeABI(id)
+  const todo = await describeABI()
   todo['id'] = id
   return todo
 }
@@ -121,8 +121,8 @@ async function getABI() {
 }
 
 // contract から特定の TODO を取得
-async function describeABI(id) {
-  return await contract.methods.todos(id).call({from: web3.eth.defaultAccount});
+async function describeABI() {
+  return await contract.methods.todos().call({from: web3.eth.defaultAccount});
 }
 
 // contract から TODO を作成
