@@ -107,9 +107,9 @@ function _updateDisplay(todoList) {
     const checkFlag = e.is_opened ? "" : "checked"
 
     todoHTMLItems = todoHTMLItems + '<li id="'+ e.id +'" class="list-group-item border-0 d-flex align-items-center ps-0">\
-      <input class="deleteTodoButton btn btn-secondary" type="button" value="投票"/>\
-      <input class="adoptionButton btn btn-success" type="button" value="採用!"/>\
-      <input class="form-check-input me-3" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + '</li>'
+      <input class="adoptionButton btn btn-success m-2" type="button" value="採用!"/>\
+      <input class="deleteTodoButton btn btn-secondary m-2" type="button" value="投票"/>\
+      <input class="form-check-input m-2" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + '</li>'
   }
 
   // 画面の更新
