@@ -39,7 +39,7 @@ document.querySelector(".button").addEventListener("click", function (e) {
 
 // 管理者用とユーザ用の表示を切り替える
 function DisplayChg() {
-  // alert('JavaScriptは走ってます')
+  alert('JavaScriptは走ってます')
   if (document.getElementById('modeChgBox').checked){
     // 採用ボタンを非表示
     document.getElementById('adoptBtn').style.display = 'inline'
