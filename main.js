@@ -155,7 +155,7 @@ function _updateDisplay(todoList) {
 
     // Solidity側のストレージに自分のTODOリストがあった場合、以下のHTMLを作成 (ボタンやチェックボックス、テキスト)
     todoHTMLItems = todoHTMLItems + '<li id="'+ e.id +'" class="list-group-item border-0 d-flex align-items-center ps-0">\
-      <input class="adoptionButton btn btn-success mx-2" class="adoptBtn" onmousedown="party.confetti(this)" type="button" value="採用!"/>\
+      <input class="adoptBtn adoptionButton btn btn-success mx-2" onmousedown="party.confetti(this)" type="button" value="採用!"/>\
       <input class="voteButton btn btn-secondary mx-2" type="button" value="投票"/>\
       <input class="form-check-input mx-2" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + " / 投票件数：" + e.voteCnt + '</li>'
   }
