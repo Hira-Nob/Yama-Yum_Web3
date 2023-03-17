@@ -36,7 +36,7 @@ $(document).on("click", ".deleteTodoButton", function () {
 
 // 投票ボタン押下時の処理
 $(document).on("click", ".voteButton", function () {
-  alert('ここは走ってます:1')
+  //alert('ここは走ってます:1')
   const id=$(this).parent().attr('id');
   voteItem(id);
 });
@@ -44,12 +44,12 @@ $(document).on("click", ".voteButton", function () {
 // 採用ボタン押下時の処理
 $(document).on("click", ".adoptionButton", function () {
   // 紙吹雪
-  // party.confetti(this, {
-  //     //lifetime: 5,
-  //     count: party.variation.range(50, 100),
-  //     //speed: party.variation.range(20, 40),
-  //     //size: 100,
-  // });
+  party.confetti(this, {
+      //lifetime: 5,
+      count: party.variation.range(50, 100),
+      //speed: party.variation.range(20, 40),
+      //size: 100,
+  });
 
   const id=$(this).parent().attr('id');
   adoptItem(id);
@@ -94,7 +94,7 @@ function deleteTodo(id) {
 
 // 投票時の処理
 function voteItem(id) {
-  alert('ここは走ってます:2')
+  //alert('ここは走ってます:2')
   voteABI(id).
   then(() => displayTodo());
 }
