@@ -37,17 +37,17 @@ document.querySelector(".button").addEventListener("click", function (e) {
   });
 });
 
-// 管理者用とユーザ用の表示を切り替える
-function DisplayChg() {
-  alert('JavaScriptは走ってます')
-  if (document.getElementById('modeChgBox').checked){
-    // 採用ボタンを非表示
-    document.getElementById('adoptBtn').style.display = 'inline'
-  }else{
-    // 採用ボタンを表示
-    document.getElementById('adoptBtn').style.display = 'none'
-  }
-}
+// // 管理者用とユーザ用の表示を切り替える
+// function DisplayChg() {
+//   alert('JavaScriptは走ってます')
+//   if (document.getElementById('modeChgBox').checked){
+//     // 採用ボタンを非表示
+//     document.getElementById('adoptBtn').style.display = 'inline'
+//   }else{
+//     // 採用ボタンを表示
+//     document.getElementById('adoptBtn').style.display = 'none'
+//   }
+// }
 
 
 // 削除ボタン押下時の処理
@@ -154,9 +154,9 @@ function _updateDisplay(todoList) {
     const checkFlag = e.is_opened ? "" : "checked"
 
     todoHTMLItems = todoHTMLItems + '<li id="'+ e.id +'" class="list-group-item border-0 d-flex align-items-center ps-0">\
-      <input class="adoptionButton btn btn-success m-2" id="adoptBtn" onmousedown="party.confetti(this)" type="button" value="採用!"/>\
-      <input class="voteButton btn btn-secondary m-2" type="button" value="投票"/>\
-      <input class="form-check-input m-2" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + " / 投票件数：" + e.voteCnt + '</li>'
+      <input class="adoptionButton btn btn-success mx-2" id="adoptBtn" onmousedown="party.confetti(this)" type="button" value="採用!"/>\
+      <input class="voteButton btn btn-secondary mx-2" type="button" value="投票"/>\
+      <input class="form-check-input mx-2" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />' + e.contents + " / 投票件数：" + e.voteCnt + '</li>'
   }
 
   // 画面の更新
