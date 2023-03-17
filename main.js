@@ -27,15 +27,15 @@ $("#createTodoButton").click(function () {
   createTodo($("#createTodoInput").val());
 });
 
-// 採用ボタンクリック時の演出
-document.querySelector(".button").addEventListener("click", function (e) {
-  party.confetti(this, {
-      //lifetime: 5,
-      count: party.variation.range(50, 100),
-      //speed: party.variation.range(20, 40),
-      //size: 100,
-  });
-});
+// // 採用ボタンクリック時の演出
+// document.querySelector(".button").addEventListener("click", function (e) {
+//   party.confetti(this, {
+//       //lifetime: 5,
+//       count: party.variation.range(50, 100),
+//       //speed: party.variation.range(20, 40),
+//       //size: 100,
+//   });
+// });
 
 // 削除ボタン押下時の処理
 // DOM 生成後に作られたオブジェクトなので on を使う
