@@ -1,5 +1,11 @@
 
+input[type="checkbox"] ~ span::after {
+  content: attr(data-off);
+}
 
+input[type="checkbox"]:checked ~ span::after {
+  content: attr(data-on);
+}
 
 
 /* 動く背景 */

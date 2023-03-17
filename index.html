@@ -18,6 +18,24 @@
 			<script type="module" src='main.js'></script>
 			<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			<script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@3.0.0/dist/web3.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+
+		<!-- Javascript直書き -->
+			<script type="text/javascript">
+				function DisplayChg() {
+					//alert('JavaScriptは走ってます')
+					if (document.getElementById('modeChgBox').checked){
+						// 採用ボタンを非表示
+						document.getElementById('createTodoButton').style.display = 'none'
+					}else{
+						// 採用ボタンを表示
+						document.getElementById('createTodoButton').style.display = 'inline'
+					}
+				}
+			</script>
+
+
+
 
 	</head>
 
@@ -79,11 +97,20 @@
 			</svg>
 		</div>
 
+		<!-- TOP文字 -->
 		<p class="text-center h2 pt-4">
 				<font color="white">
 					アイデア募集：テレワーク時の会話増加方法について
 				</font>
 		</p>
+		
+		<!-- 管理者モード切り替えボタン -->
+		<div class="fixed-bottom m-2">
+			<label>
+				<input id="modeChgBox" type="checkbox" onclick="DisplayChg()">
+				<span data-off="ユーザモード" data-on="管理者モード"></span>
+			</label>
+		</div>
 
 		<!-- <section class="vh-100" style="background-color: #3da2c3;"> -->
 		<section class="vh-100">

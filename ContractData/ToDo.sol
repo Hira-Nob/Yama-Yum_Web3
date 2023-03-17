@@ -77,6 +77,7 @@ contract todo {
   
 
   // 2023/03/17 追加
+  // 投票機能
   function voteTODO(uint _id) public onlyMine(_id) {
     require(todos[_id].is_deleted == false);
 
@@ -85,5 +86,17 @@ contract todo {
     //todos[_id].voteCnt = todos[_id].voteCnt + 1;
 
   }
+
+  // 採用機能
+  function adoptTODO(uint _id) public onlyMine(_id) {
+    require(todos[_id].is_deleted == false);
+
+    // トークン付与の機能
+    //
+    //
+    //
+
+  }
+  
 
 }
