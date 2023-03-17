@@ -49,7 +49,6 @@ contract todo {
 
   // 引数から TODO を作成し storage に保存する
   function createTODO(string memory _contents) public returns(uint) {
-    //2023/03/17 追加
     todos.push(Todo(_contents, true, false, 0));
     uint id = todos.length - 1;
     todoToOwner[id] = msg.sender;
@@ -77,26 +76,27 @@ contract todo {
   
 
   // 2023/03/17 追加
-  // 投票機能
   function voteTODO(uint _id) public onlyMine(_id) {
     require(todos[_id].is_deleted == false);
 
     // 投票件数を増やす
-    todos[_id].voteCnt++;
-    //todos[_id].voteCnt = todos[_id].voteCnt + 1;
+    //todos[_id].voteCnt++;
+    todos[_id].voteCnt = todos[_id].voteCnt + 1;
 
   }
 
-  // 採用機能
+  // 2023/03/17 追加
   function adoptTODO(uint _id) public onlyMine(_id) {
     require(todos[_id].is_deleted == false);
 
-    // トークン付与の機能
+    // 山内くん記入
+    //
     //
     //
     //
 
   }
-  
+
+
 
 }
