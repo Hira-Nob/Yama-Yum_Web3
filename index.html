@@ -26,10 +26,17 @@
 					//alert('JavaScriptは走ってます')
 					if (document.getElementById('modeChgBox').checked){
 						// 採用ボタンを非表示
-						document.getElementsByClassName('class').style.display = 'none'
+						//document.getElementsByClassName('class').style.display = 'none'
+						var UnVis = document.getElementsByClassName('class');
+							for(var i = 0; i < UnVis.length; i++) {
+								UnVis[i].style.display = "none";
+}
 					}else{
 						// 採用ボタンを表示
-						document.getElementsByClassName('class').style.display = 'inline'
+						//document.getElementsByClassName('class').style.display = 'inline'
+						var Vis = document.getElementsByClassName('class');
+							for(var i = 0; i < Vis.length; i++) {
+								Vis[i].style.display = "none";
 					}
 				}
 			</script>
