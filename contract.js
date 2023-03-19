@@ -1,7 +1,7 @@
 // Set contract address
-const contractAddress = "0x4cC83d534AB2C01cCb0a71a200C8Ec46495C215B"
+const contractAddress = "0x779DFAbbEd1a422c3382B6c0c96Bfe02a23754B8"
 // まだ修正してない
- const ContractAbi = [
+ const ContractAbi =[
 	{
 		"inputs": [
 			{
@@ -81,6 +81,19 @@ const contractAddress = "0x4cC83d534AB2C01cCb0a71a200C8Ec46495C215B"
 	{
 		"inputs": [],
 		"name": "getTODO",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTODO2",
 		"outputs": [
 			{
 				"internalType": "uint256[]",
