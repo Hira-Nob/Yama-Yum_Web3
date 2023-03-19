@@ -17,7 +17,8 @@ const account = accounts[0];
 web3.eth.defaultAccount = account;
 console.log(web3.eth.defaultAccount);
 
-const contract = new web3.eth.Contract(ContractAbi, contractAddress)
+const contract = new web3.eth.Contract(ContractAbi, contractAddress);
+const contract2 = new web3.eth.Contract(ContractAbi2, contractAddress2)
 
 // 初期表示
 displayTodo()
@@ -197,4 +198,8 @@ async function voteABI(id) {
 async function adoptABI(id) {
   await contract.methods.adoptTODO(id).send({from: web3.eth.defaultAccount})
   alert('アイデアを採用し、アイデア投稿者にトークンが付与されました。')
+    //ここに送金処置
+   //const send = await contract2.methods.mint(10).send({from: account});//ウォレットに入金
+    //const send = await contract2.methods.burn(10).send({from: account});//ウォレットの金削除
+	   //const send = await contract2.methods.transfer("0x0a078FB411D78558aE65c5034b07efab2b0E69Fe",10).send({from: account});//ウォレットの金譲渡
 }
