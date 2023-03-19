@@ -165,7 +165,7 @@ function _updateDisplay(todoList) {
 
 // contract から TODO リストを取得
 async function getABI() {
-  return await contract.methods.getTODO().call({from: web3.eth.defaultAccount})
+  return await contract.methods.getTODO2().call({from: web3.eth.defaultAccount})
 }
 
 // contract から特定の TODO を取得
