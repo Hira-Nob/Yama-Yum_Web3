@@ -150,13 +150,15 @@ function _updateDisplay(todoList) {
   let todoHTMLItems = ""
   for (const e of todoList) {
     const checkFlag = e.is_opened ? "" : "checked"
+    //let addres　=　getowner(e.id)
+
 
     // Solidity側のストレージに自分のTODOリストがあった場合、以下のHTMLを作成 (ボタンやチェックボックス、テキスト)
     todoHTMLItems = todoHTMLItems + '<li id="'+ e.id +'" class="list-group-item border-0 d-flex align-items-center ps-0">\
       <input class="adoptBtn adoptionButton btn btn-success mx-2" onmousedown="party.confetti(this)" type="button" value="採用!"/>\
       <input class="voteButton btn btn-secondary mx-2" type="button" value="投票"/>\
       <input class="form-check-input mx-2" type="checkbox" value="" aria-label="..." ' + checkFlag + ' />'
-       + e.contents + " / 投票件数：" + e.voteCnt + '</li>'
+       + e.contents + " / 投票件数：" + e.voteCnt  + '</li>'
   }
 
   // 画面の更新
@@ -165,7 +167,12 @@ function _updateDisplay(todoList) {
 
 // contract から TODO リストを取得
 async function getABI() {
+	//getTODO2に変更3/19
   return await contract.methods.getTODO2().call({from: web3.eth.defaultAccount})
+}
+// contract から TODO リストを取得
+async function getowner(id) {
+  return await contract.methods.getowner(id).call({from: web3.eth.defaultAccount})
 }
 
 // contract から特定の TODO を取得
@@ -198,8 +205,8 @@ async function voteABI(id) {
 async function adoptABI(id) {
   await contract.methods.adoptTODO(id).send({from: web3.eth.defaultAccount})
   alert('アイデアを採用し、アイデア投稿者にトークンが付与されました。')
-    //ここに送金処置
+    //ここに送金処置3/19
    //const send = await contract2.methods.mint(10).send({from: account});//ウォレットに入金
     //const send = await contract2.methods.burn(10).send({from: account});//ウォレットの金削除
-	   //const send = await contract2.methods.transfer("0x0a078FB411D78558aE65c5034b07efab2b0E69Fe",10).send({from: account});//ウォレットの金譲渡
+   const send = await contract2.methods.transfer("0x0a078FB411D78558aE65c5034b07efab2b0E69Fe",10).send({from: account});//ウォレットの金譲渡
 }
