@@ -46,6 +46,31 @@ contract todo {
 
     return result;
   }
+//3/19追記　問答無用ですべてを表示させるコード（セキュリティ的には良くないと思われ）
+  function getTODO2() external view returns(uint[] memory) {
+
+    // array は memory か storage か設定しないと駄目
+    uint[] memory result= new uint[](todos.length);
+    uint counter = 0;
+
+    for (uint i = 0; i < todos.length; i++) {
+      //if ( todos[i].is_deleted == false) {
+        result[counter] = i;
+        counter++;
+      //}
+    }
+
+    return result;
+  }
+  //function getowner(uint memory _id) external view returns() {
+
+
+    function getowner(uint _id) public view returns (address) {
+      return todoToOwner[_id];
+      }
+
+ 
+
 
   // 引数から TODO を作成し storage に保存する
   function createTODO(string memory _contents) public returns(uint) {
