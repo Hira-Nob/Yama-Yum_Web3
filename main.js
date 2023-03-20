@@ -203,10 +203,10 @@ async function voteABI(id) {
 
 // contract で Itemを採用
 async function adoptABI(id) {
-  await contract.methods.adoptTODO(id).send({from: web3.eth.defaultAccount})
+   //const send = await contract2.methods.transfer("ウォレットアドレス",10).send({from:  web3.eth.defaultAccount});//ウォレットの金譲渡
   alert('アイデアを採用し、アイデア投稿者にトークンが付与されました。')
     //ここに送金処置3/19
    //const send = await contract2.methods.mint(10).send({from: account});//ウォレットに入金
     //const send = await contract2.methods.burn(10).send({from: account});//ウォレットの金削除
-   //const send = await contract2.methods.transfer("ウォレットアドレス",10).send({from:  web3.eth.defaultAccount});//ウォレットの金譲渡
+  
 }
